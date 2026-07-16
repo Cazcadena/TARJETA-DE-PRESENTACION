@@ -28,7 +28,7 @@ html,body{
 
 #video{
     position:fixed;
-    top:47%;
+    top:45%;
     left:50%;
     width:100vw;
     height:100vh;
@@ -104,144 +104,6 @@ html,body{
 
 }
 
-    /*=========================
-   SCANNER VERDE NEÓN
-=========================*/
-
-.scanner{
-
-    position:fixed;
-
-    left:50%;
-    bottom:35px;
-
-    transform:translateX(-50%);
-
-    width:280px;
-    height:10px;
-
-    border-radius:100px;
-
-    overflow:hidden;
-
-    backdrop-filter:blur(3px);
--webkit-backdrop-filter:blur(3px);
-
-    background:linear-gradient(
-    90deg,
-    rgba(0,255,100,.03),
-    rgba(0,255,100,.18),
-    rgba(0,255,100,.03));
-
-    border:1px solid rgba(0,255,120,.35);
-
-    box-shadow:
-0 0 8px #00ff66,
-0 0 20px #00ff66,
-0 0 40px #00ff66,
-0 0 70px rgba(0,255,100,.7),
-inset 0 0 18px rgba(255,255,255,.35);
-
-    animation:pulseBar 2s ease-in-out infinite;
-
-    z-index:99999;
-
-    background-size:200% 100%;
-animation:pulseBar 2s ease-in-out infinite, brilloBarra 2.5s linear infinite;
-
-}
-.scanner-light{
-
-    position:absolute;
-
-    top:-18px;
-    left:-120px;
-
-    width:120px;
-    height:45px;
-
-    border-radius:50%;
-
-    background:radial-gradient(circle,
-    rgba(255,255,255,1) 0%,
-    rgba(120,255,160,1) 18%,
-    rgba(0,255,100,1) 38%,
-    rgba(0,255,100,.55) 62%,
-    transparent 100%);
-
-    filter:blur(3px);
-
-    animation:scannerMove 1.1s linear infinite;
-
-    box-shadow:
-    0 0 15px #00ff66,
-    0 0 30px #00ff66,
-    0 0 60px #00ff66,
-    0 0 90px #00ff66,
-    0 0 120px #00ff66;
-
-}
-    
-@keyframes scannerMove{
-
-    0%{
-        left:-120px;
-    }
-
-    50%{
-        left:280px;
-    }
-
-    100%{
-        left:-120px;
-    }
-
-}  
-
-    @keyframes pulseBar{
-
-    0%,100%{
-
-        opacity:.75;
-
-        transform:translateX(-50%) scaleX(.98);
-
-    }
-
-    50%{
-
-        opacity:1;
-
-        transform:translateX(-50%) scaleX(1.03);
-
-    }
-
-}
-
-    .scanner-light-2{
-
-    animation-delay:.18s;
-
-    opacity:.35;
-
-    filter:blur(10px);
-
-    transform:scale(1.7);
-
-}
-
-    @keyframes brilloBarra{
-
-    0%{
-        background-position:0% 50%;
-    }
-
-    100%{
-        background-position:200% 50%;
-    }
-
-}
-    
 </style>
 
 </head>
@@ -263,11 +125,7 @@ type="video/mp4">
 
 </video>
 
-<div class="scanner">
-    <div class="scanner-light"></div>
-    <div class="scanner-light scanner-light-2"></div>
-</div>
-    
+
 <div class="social">
 
 <a
