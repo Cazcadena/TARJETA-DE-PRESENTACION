@@ -104,6 +104,56 @@ html,body{
 
 }
 
+    #btnSonido{
+
+    position:fixed;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:rgba(18,18,19,.85);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:999999;
+
+    box-shadow:0 0 25px rgba(0,0,0,.45);
+
+    transition:.25s;
+
+}
+
+#btnSonido:hover{
+
+    transform:translateX(-50%) scale(1.08);
+
+}
+
+#btnSonido:active{
+
+    transform:translateX(-50%) scale(.95);
+
+}
+    
 </style>
 
 </head>
@@ -170,10 +220,15 @@ title="WhatsApp">
 
 </div>
 
+<div id="btnSonido">
+
+<i class="fas fa-volume-xmark"></i>
+
+</div>
+
 <script>
 
 const video=document.getElementById("video");
-
 // Intenta reproducir con sonido
 video.volume=0;
 video.muted=true;
@@ -195,6 +250,19 @@ async function iniciar(){
 
 document.addEventListener("click",iniciar,{once:true});
 document.addEventListener("touchstart",iniciar,{once:true});
+
+    const btnSonido=document.getElementById("btnSonido");
+
+btnSonido.addEventListener("click",async()=>{
+
+    video.muted=false;
+    video.volume=1;
+
+    await video.play();
+
+    btnSonido.innerHTML='<i class="fas fa-volume-high"></i>';
+
+});
 
 </script>
 
