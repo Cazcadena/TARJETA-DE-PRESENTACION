@@ -113,6 +113,7 @@ html,body{
 <video
 id="video"
 autoplay
+muted
 loop
 playsinline
 preload="auto"
@@ -174,8 +175,8 @@ title="WhatsApp">
 const video=document.getElementById("video");
 
 // Intenta reproducir con sonido
-video.volume=1;
-video.muted=false;
+video.volume=0;
+video.muted=true;
 
 // Si el navegador bloquea el sonido,
 // al primer toque comenzará con audio.
