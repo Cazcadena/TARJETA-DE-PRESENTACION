@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Video Pantalla Completa</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#000;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+#video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+    object-position:40% center;
+}
+
+
+/* BOTONES */
+
+.social{
+    position:fixed;
+    right:-100px;
+    top:25%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    z-index:99999;
+
+    animation:entrar .9s ease forwards;
+    animation-delay:.4s;
+}
+
+@keyframes entrar{
+
+    from{
+        right:-100px;
+        opacity:0;
+    }
+
+    to{
+        right:18px;
+        opacity:1;
+    }
+
+}
+
+.social a{
+
+    width:60px;
+    height:60px;
+
+    border-radius:18px;
+
+    background:#121213;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:28px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+    transition:.25s;
+
+}
+
+.social a:hover{
+
+    transform:scale(1.1);
+
+}
+
+.social a:active{
+
+    transform:scale(.95);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<video
+id="video"
+autoplay
+loop
+playsinline
+preload="auto"
+controlslist="nodownload nofullscreen noremoteplayback"
+disablePictureInPicture>
+
+<source
+src="https://i.imgur.com/5aY4EnT.mp4"
+type="video/mp4">
+
+</video>
+
+
+<div class="social">
+
+<a
+href="https://www.instagram.com/soy.juannei?igsh=bHNqOTFqeHdyZmQ="
+target="_blank"
+title="Instagram">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+
+<a
+href="https://www.tiktok.com/@juanmanuelbohorqu40"
+target="_blank"
+title="TikTok">
+
+<i class="fab fa-tiktok"></i>
+
+</a>
+
+
+<a
+href="https://www.facebook.com/share/1EnrkdQoZy/"
+target="_blank"
+title="Facebook">
+
+<i class="fab fa-facebook-f"></i>
+
+</a>
+
+
+<a
+href="https://wa.me/573163085027?text=Hola,%20me%20interesan%20tus%20servicios%20como%20coach,%20quiero%20mas%20informaci%C3%B3n!!!"
+target="_blank"
+title="WhatsApp">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+</div>
+
+<script>
+
+const video=document.getElementById("video");
+
+// Intenta reproducir con sonido
+video.volume=1;
+video.muted=false;
+
+// Si el navegador bloquea el sonido,
+// al primer toque comenzará con audio.
+
+async function iniciar(){
+
+    try{
+
+        video.muted=false;
+        video.volume=1;
+        await video.play();
+
+    }catch(e){}
+
+}
+
+document.addEventListener("click",iniciar,{once:true});
+document.addEventListener("touchstart",iniciar,{once:true});
+
+</script>
+
+</body>
+</html>
